@@ -159,10 +159,11 @@ public class JiraApiUtils
                 time.append(entry.getKey());
                 time.append(" : ");
                 if (metric.equals("day")){
-                   double days = ((timeInSec / 3600) / 8);
+                   int days = ((timeInSec / 3600) / 8);
                    time.append(days);
+                } else {
+                    time.append(timeInSec / 3600);
                 }
-                time.append(timeInSec / 3600);
                 time.append("\r\n");
             }
             catch ( JiraException ex )
